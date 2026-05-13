@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airport Bawarchi | Royal Hyderabadi Restaurant</title>
+  <meta name="description" content="Luxury Hyderabadi Restaurant Near Airport - Airport Bawarchi, Shamshabad Hyderabad" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cinzel', serif;
+    }
+
+    .gold {
+      color: #d4af37;
+    }
+
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .gold-border {
+      border: 1px solid rgba(212,175,55,0.5);
+    }
+
+    .hover-3d {
+      transition: all 0.5s ease;
+      transform-style: preserve-3d;
+    }
+
+    .hover-3d:hover {
+      transform: rotateY(10deg) rotateX(5deg) scale(1.03);
+      box-shadow: 0 20px 40px rgba(212,175,55,0.2);
+    }
+
+    .glow {
+      box-shadow: 0 0 30px rgba(212,175,55,0.3);
+    }
+
+    .gallery img {
+      transition: 0.6s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+    }
+
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    .loader h1 {
+      font-size: 3rem;
+      color: #d4af37;
+      letter-spacing: 4px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #d4af37;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: move 10s linear infinite;
+    }
+
+    @keyframes move {
+      from {
+        transform: translateY(100vh) scale(0);
+      }
+      to {
+        transform: translateY(-100vh) scale(1.5);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader" id="loader">
+    <h1>Airport Bawarchi</h1>
+    <p class="text-gray-400 mt-4">Luxury Royal Experience</p>
+  </div>
+
+  <nav class="fixed top-0 left-0 w-full z-50 glass px-8 py-5 flex justify-between items-center">
+    <h1 class="text-2xl md:text-3xl font-bold gold">Airport Bawarchi</h1>
+
+    <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+      <a href="#about" class="hover:text-yellow-500">About</a>
+      <a href="#menu" class="hover:text-yellow-500">Menu</a>
+      <a href="#gallery" class="hover:text-yellow-500">Gallery</a>
+      <a href="#reviews" class="hover:text-yellow-500">Reviews</a>
+      <a href="#contact" class="hover:text-yellow-500">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero-bg flex items-center justify-center text-center px-6 relative overflow-hidden">
+
+    <div class="particle" style="left:10%; animation-delay:0s"></div>
+    <div class="particle" style="left:30%; animation-delay:2s"></div>
+    <div class="particle" style="left:50%; animation-delay:4s"></div>
+    <div class="particle" style="left:70%; animation-delay:1s"></div>
+    <div class="particle" style="left:90%; animation-delay:3s"></div>
+
+    <div class="z-10 max-w-5xl">
+      <h1 class="text-5xl md:text-8xl font-bold gold mb-6 floating">
+        Airport Bawarchi
+      </h1>
+
+      <p class="text-xl md:text-3xl mb-10 text-gray-200">
+        Authentic Hyderabadi Taste Near Airport
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="#menu" class="px-8 py-4 bg-yellow-600 hover:bg-yellow-500 rounded-full text-black font-bold transition glow">
+          Explore Menu
+        </a>
+
+        <a href="#contact" class="px-8 py-4 border border-yellow-600 rounded-full hover:bg-yellow-600 transition">
+          Book Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 px-6 md:px-20 bg-[#0b0b0b]">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+
+      <div>
+        <h2 class="text-5xl gold mb-8">Royal Dining Experience</h2>
+
+        <p class="text-gray-300 leading-8 text-lg">
+          Welcome to Airport Bawarchi, one of the most loved Hyderabadi restaurants near Shamshabad Airport. Experience royal ambience, authentic biryani, delicious kebabs, luxury interiors, and unforgettable dining.
+        </p>
+
+        <p class="text-gray-400 mt-6 leading-8">
+          Our restaurant combines Mughlai elegance with modern luxury, delivering a premium food experience with cinematic ambience and warm hospitality.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-5">
+        <img class="rounded-3xl hover-3d h-72 object-cover" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format&fit=crop">
+
+        <img class="rounded-3xl hover-3d mt-10 h-72 object-cover" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop">
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="py-24 px-6 md:px-20">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl gold mb-6">Our Royal Menu</h2>
+      <p class="text-gray-400">Luxury Hyderabadi Delicacies</p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+
+      <div class="glass gold-border rounded-3xl p-8 hover-3d">
+        <h3 class="text-3xl gold mb-4">Biryani</h3>
+        <p class="text-gray-300">Authentic Dum Biryani & Special Family Packs</p>
+      </div>
+
+      <div class="glass gold-border rounded-3xl p-8 hover-3d">
+        <h3 class="text-3xl gold mb-4">Mandi</h3>
+        <p class="text-gray-300">Premium Arabian Mandi & Juicy Meat Specials</p>
+      </div>
+
+      <div class="glass gold-border rounded-3xl p-8 hover-3d">
+        <h3 class="text-3xl gold mb-4">Kebabs</h3>
+        <p class="text-gray-300">Tandoori, Grilled, and Hyderabadi Kebabs</p>
+      </div>
+
+      <div class="glass gold-border rounded-3xl p-8 hover-3d">
+        <h3 class="text-3xl gold mb-4">Desserts</h3>
+        <p class="text-gray-300">Qubani Ka Meetha, Double Ka Meetha & More</p>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-14">
+      <a href="menu.pdf" target="_blank" class="bg-yellow-600 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-500 transition">
+        View PDF Menu
+      </a>
+    </div>
+  </section>
+
+  <section id="gallery" class="py-24 px-6 md:px-20 bg-[#0b0b0b] gallery">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl gold mb-6">Luxury Gallery</h2>
+      <p class="text-gray-400">Royal Ambience & Premium Food</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <img class="rounded-3xl h-80 w-full object-cover hover-3d" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop">
+
+      <img class="rounded-3xl h-80 w-full object-cover hover-3d" src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop">
+
+      <img class="rounded-3xl h-80 w-full object-cover hover-3d" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200&auto=format&fit=crop">
+
+      <img class="rounded-3xl h-80 w-full object-cover hover-3d" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1200&auto=format&fit=crop">
+
+      <img class="rounded-3xl h-80 w-full object-cover hover-3d" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop">
+
+      <img class="rounded-3xl h-80 w-full object-cover hover-3d" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop">
+
+    </div>
+  </section>
+
+  <section id="reviews" class="py-24 px-6 md:px-20">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl gold mb-6">Customer Testimonials</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="glass p-8 rounded-3xl hover-3d">
+        <p class="text-yellow-400 text-2xl mb-4">★★★★★</p>
+        <p class="text-gray-300 leading-7">
+          One of the best biryani experiences near Hyderabad airport. Ambience feels royal and luxurious.
+        </p>
+        <h4 class="mt-6 gold text-xl">— Mohammed Arif</h4>
+      </div>
+
+      <div class="glass p-8 rounded-3xl hover-3d">
+        <p class="text-yellow-400 text-2xl mb-4">★★★★★</p>
+        <p class="text-gray-300 leading-7">
+          Amazing mandi and kebabs. The interiors and lighting make the restaurant feel premium.
+        </p>
+        <h4 class="mt-6 gold text-xl">— Ahmed Khan</h4>
+      </div>
+
+      <div class="glass p-8 rounded-3xl hover-3d">
+        <p class="text-yellow-400 text-2xl mb-4">★★★★★</p>
+        <p class="text-gray-300 leading-7">
+          Beautiful place with cinematic ambience. Perfect family restaurant near airport.
+        </p>
+        <h4 class="mt-6 gold text-xl">— Sameera Fatima</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 px-6 md:px-20 bg-[#0b0b0b]">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <h2 class="text-5xl gold mb-8">Visit Us</h2>
+
+        <p class="text-gray-300 text-lg leading-8">
+          Sahara Complex, Near Bus Stand, 20-68, AH43, Shamshabad, Hyderabad, Telangana 501218
+        </p>
+
+        <p class="text-gray-400 mt-4 text-xl">
+          Phone: +91 99666 96311
+        </p>
+
+        <a href="https://maps.google.com/?q=Airport+Bawarchi+Shamshabad" target="_blank" class="inline-block mt-8 bg-yellow-600 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-500 transition">
+          Get Directions
+        </a>
+
+        <div class="mt-10 flex gap-5">
+          <a href="https://wa.me/919966696311" target="_blank" class="bg-green-500 px-6 py-4 rounded-full font-bold hover:scale-110 transition">
+            WhatsApp
+          </a>
+
+          <a href="https://instagram.com" target="_blank" class="bg-pink-500 px-6 py-4 rounded-full font-bold hover:scale-110 transition">
+            Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl p-10">
+        <h3 class="text-3xl gold mb-8">Inquiry Form</h3>
+
+        <form class="space-y-6">
+          <input type="text" placeholder="Your Name" class="w-full p-4 rounded-xl bg-black border border-gray-700 outline-none">
+
+          <input type="text" placeholder="Phone Number" class="w-full p-4 rounded-xl bg-black border border-gray-700 outline-none">
+
+          <input type="email" placeholder="Email Address" class="w-full p-4 rounded-xl bg-black border border-gray-700 outline-none">
+
+          <textarea rows="5" placeholder="Message" class="w-full p-4 rounded-xl bg-black border border-gray-700 outline-none"></textarea>
+
+          <button class="w-full bg-yellow-600 text-black font-bold py-4 rounded-xl hover:bg-yellow-500 transition">
+            Submit Inquiry
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-black text-center py-10 border-t border-yellow-700">
+    <h2 class="text-3xl gold mb-4">Airport Bawarchi</h2>
+
+    <p class="text-gray-400">
+      Royal Hyderabadi Restaurant Experience
+    </p>
+
+    <p class="text-gray-600 mt-6">
+      © 2026 Airport Bawarchi. All Rights Reserved.
+    </p>
+  </footer>
+
+  <script>
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+      }, 2500);
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from('.hero-bg h1', {
+      y: 80,
+      opacity: 0,
+      duration: 1.5
+    });
+
+    gsap.utils.toArray('section').forEach(section => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 80,
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%'
+        }
+      });
+    });
+
+  </script>
+
+</body>
+</html>
